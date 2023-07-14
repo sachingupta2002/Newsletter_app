@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+    body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.failure-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.failure-icon {
+    font-size: 60px;
+    color: #e53935;
+    margin-bottom: 20px;
+    animation: shake 0.8s infinite;
+}
+
+.failure-message {
+    background-color: #e53935;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease;
+}
+
+.failure-message h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.failure-message p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.try-again-btn {
+    background-color: #fff;
+    color: #e53935;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.try-again-btn:hover {
+    background-color: #e53935;
+    color: #fff;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+   </style>
+</head>
+<body>
+    <div class="failure-container">
+        <div class="failure-icon">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="failure-message">
+            <h2>Failure!</h2>
+            <p>Your action could not be completed.</p>
+            <form action="/failure" method="post">
+            <button class="try-again-btn" type="submit" name ="button">Try Again</button>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
